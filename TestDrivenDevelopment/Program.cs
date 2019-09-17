@@ -1,27 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TestDrivenDevelopment
 {
-    public class NaiveCanonicalizer
-    {
-        public static string GetCanonicalForm(string searchTerm)
-        {
-            return searchTerm
-                .Split(new[] { ' ' })
-                .Select(x => x.ToUpper())
-                .OrderBy(x => x)
-                .Aggregate((x, y) => x + " " + y);
-        }
-    }
     class Program
     {
         static void Main(string[] args)
         {
+            string empty = NaiveCanonicalizer.GetCanonicalForm("");
+            Console.WriteLine(empty == "");
+            empty = NaiveCanonicalizer.GetCanonicalForm("     ");
+            Console.WriteLine(empty == "");
+            empty = NaiveCanonicalizer.GetCanonicalForm("                ");
+            Console.WriteLine(empty == "");
 
+
+
+            Console.WriteLine(NaiveCanonicalizer.GetCanonicalForm("wonderful life katie melua         "));
+            Console.WriteLine(NaiveCanonicalizer.GetCanonicalForm("life          wonderful katie        melua"));
+
+
+
+            Console.WriteLine(NaiveCanonicalizer.GetCanonicalForm("wonderful life katie melua"));
+            Console.WriteLine(NaiveCanonicalizer.GetCanonicalForm("life wonderful katie melua"));
+            Console.WriteLine(NaiveCanonicalizer.GetCanonicalForm("katie melua life wonderful"));
+
+            Console.Read();
         }
     }
 }
