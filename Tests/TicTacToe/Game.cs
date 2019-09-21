@@ -1,5 +1,4 @@
 ﻿using System;
-using NUnit.Framework;
 
 namespace Tests.TicTacToe
 {
@@ -56,6 +55,8 @@ namespace Tests.TicTacToe
                     }
                 }
             }
+            if (MovesCounter < 9)
+                return Winner.GameIsUnfinished;
 
             return Winner.Draw;
         }

@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using NUnit.Framework;
+﻿using NUnit.Framework;
+using System;
 using Tests.TicTacToe;
+using Assert = Microsoft.VisualStudio.TestTools.UnitTesting.Assert;
 
 namespace Tests
 {
@@ -31,7 +28,7 @@ namespace Tests
         [Test]
         public void MakeInvalidMove_ThrowsException()
         {
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
+            Assert.ThrowsException<ArgumentOutOfRangeException>(() =>
             {
                 var game = new Game();
                 game.MakeMove(0);
@@ -41,7 +38,7 @@ namespace Tests
         [Test]
         public void MoveOnTheSameSquare_ThrowsException()
         {
-            Assert.Throws<InvalidOperationException>(() =>
+            Assert.ThrowsException<InvalidOperationException>(() =>
             {
                 var game = new Game();
                 game.MakeMove(1);
@@ -65,7 +62,7 @@ namespace Tests
         public void GetWinner_ZeroesWinVertically_ReturnsZeroes()
         {
             Game game = new Game();
-            
+
             // 2 5 8 wins
             MakeMoves(game, 1, 2, 3, 5, 7, 8);
 
