@@ -59,6 +59,9 @@
     <Compile Include="ImmutableStack\ImmutableStack.cs" />
     <Compile Include="ImmutableStackTests.cs" />
     <Compile Include="ImmutableStack\IStack.cs" />
+    <Compile Include="LinkedListTests.cs" />
+    <Compile Include="LinkedList\ListNode.cs" />
+    <Compile Include="LinkedList\MyLinkedList.cs" />
     <Compile Include="StackTests.cs" />
     <Compile Include="FibonacciTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
