@@ -55,7 +55,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Sut.cs" />
     <Compile Include="CalculatorTests.cs" />
+    <Compile Include="CustomerTests.cs" />
     <Compile Include="ImmutableStack\ImmutableStack.cs" />
     <Compile Include="ImmutableStackTests.cs" />
     <Compile Include="ImmutableStack\IStack.cs" />
